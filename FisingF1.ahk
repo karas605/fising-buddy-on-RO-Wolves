@@ -21,7 +21,7 @@ MsgBox,,,Loop Start...,1
 Loop
 {
 	Controlsend, ahk_parent,{f1}, ahk_id %active_id%
-	sleep,3000
+	sleep,4000
 }
 return
 
