@@ -1,23 +1,30 @@
 auther:="karas605-헤스티나"
-version:="v1.0"
+version:="v1.1"
 developmentDate:="2022-07-21"
 use:="Ragnarok Wolves 4th v2.5"
+startkey:="F1"
+stopkey:="Ctrl+F12"
+pausekey:="Ctrl+F11"
+suspendkey:="Ctrl+F10"
 
-Gui, font, cWhite s15, NanumGothic
+Gui, font, cWhite s10, NanumGothic
 Gui, Add, Text, , 작  성  자: %auther%
 Gui, Add, Text, , 버       전: %version%
 Gui, Add, Text, , 작  성  일: %developmentDate%
 Gui, Add, Text, , 작동버전 : %use%
-
-Gui, Add, Button, x10 y180 w350 h50 gStop, 종료
+Gui, Add, Text, , 시작키 : %startkey%
+; Gui, Add, Text, , 종료키 : %stopkey%
+; Gui, Add, Text, , 일시정지/재시작 : %pausekey%
+; Gui, Add, Text, , 단축키 비활성화 : %suspendkey%
 Gui, Color, 000000
-Gui, Show, AutoSize
+Gui, show, x10 y5 AutoSize
 
-MsgBox,,, F1에 미끼를 놓고 게임에서 F1 을 누르면 시작됩니다.`n종료키는 F12 `n`n3초마다 미끼를 던집니다.`n관리자 권한으로 실행하셔야 작동됩니다.`n비활성화창(다른창으로 전환)이 되어도`n매크로가 시작된거면 계속 그 창에서 시전됩니다.`n`n이 도움말 창은 5초후 자동으로 사라집니다.,5
+MsgBox,,, F1에 미끼를 놓습니다`n매 4초마다 미끼를 던집니다.관리자 권한으로 실행하셔야 작동됩니다.`n비활성화창(다른창으로 전환)이 되어도`n매크로가 시작된거면 계속 그 창에서 시전됩니다.`n`n이 도움말 창은 10초후 자동으로 사라집니다.,10
 
 f1::
 WinGet, active_id, ID, A
-MsgBox,,,Loop Start...,1
+MsgBox,,,F1-4초 반복 시작...,1
+Suspend
 Loop
 {
 	Controlsend, ahk_parent,{f1}, ahk_id %active_id%
@@ -25,13 +32,20 @@ Loop
 }
 return
 
-^f10::Pause
-return
+; ^f10::
+; MsgBox,,, Suspend, 1
+; Suspend
+; return
 
-^f11::Suspend
-return
+; ^f11::
+; MsgBox,,, Pause , 1
+; Pause, Toggle
+; return
 
-^f12::ExitApp
+;^f12::
+
 Stop:
 GuiClose:
+MsgBox,,, 종료, 1
+ExitApp
 return
