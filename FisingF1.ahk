@@ -3,7 +3,7 @@ version:="v1.1"
 developmentDate:="2022-07-21"
 use:="Ragnarok Wolves 4th v2.5"
 startkey:="F1"
-; stopkey:="F12"
+stopkey:="x없음x"
 ; pausekey:="Ctrl+F11"
 ; suspendkey:="Ctrl+F10"
 
@@ -19,7 +19,7 @@ Gui, Add, Text, , 종료키 : %stopkey%
 Gui, Color, 000000
 Gui, show, x10 y5 AutoSize
 
-MsgBox,,, F1에 미끼를 놓습니다`n매 4초마다 미끼를 던집니다.`n`n관리자 권한으로 실행하셔야 작동됩니다.`n`n비활성화창(다른창으로 전환)이 되어도`n매크로가 시작된거면 계속 그 창에서 시전됩니다.`n`n이 도움말 창은 10초후 자동으로 사라집니다.,10
+MsgBox,,, %startkey%에 미끼를 놓습니다`n매 4초마다 미끼를 던집니다.`n`n관리자 권한으로 실행하셔야 작동됩니다.`n`n비활성화창(다른창으로 전환)이 되어도`n매크로가 시작된거면 계속 그 창에서 시전됩니다.`n`n이 도움말 창은 10초후 자동으로 사라집니다. 신경쓰지 마세요.,10
 
 f1::
 WinGet, active_id, ID, A
