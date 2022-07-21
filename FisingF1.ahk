@@ -1,6 +1,6 @@
 auther:="karas605-헤스티나"
-version:="v0.4 gamma"
-developmentDate:="2022-07-20"
+version:="v1.0"
+developmentDate:="2022-07-21"
 use:="Ragnarok Wolves 4th v2.5"
 
 Gui, font, cWhite s15, NanumGothic
@@ -25,8 +25,11 @@ Loop
 }
 return
 
-f12::
+^f10::Pause
+
+^f11::Suspend
+
+^f12::ExitApp
 Stop:
 GuiClose:
-ExitApp
 return
