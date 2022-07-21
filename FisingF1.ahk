@@ -26,8 +26,10 @@ Loop
 return
 
 ^f10::Pause
+return
 
 ^f11::Suspend
+return
 
 ^f12::ExitApp
 Stop:
