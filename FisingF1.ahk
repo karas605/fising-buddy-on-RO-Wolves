@@ -1,9 +1,9 @@
 ﻿auther:="karas605-헤스티나"
 version:="v1.1"
-developmentDate:="2022-07-21"
+developmentDate:="2022-07-22"
 use:="Ragnarok Wolves 4th v2.5"
 startkey:="F1"
-stopkey:="x없음x"
+stopkey:="F12"
 ; pausekey:="Ctrl+F11"
 ; suspendkey:="Ctrl+F10"
 
@@ -24,7 +24,7 @@ MsgBox,,, %startkey%에 미끼를 놓습니다`n매 4초마다 미끼를 던집�
 f1::
 WinGet, active_id, ID, A
 MsgBox,,,F1-4초 반복 시작...,1
-Suspend on
+Suspend, Toggle
 Loop
 {
 	Controlsend, ahk_parent,{f1}, ahk_id %active_id%
@@ -42,7 +42,7 @@ return
 ; Pause, Toggle
 ; return
 ; 
-; f12::
+f12::
 Stop:
 GuiClose:
 MsgBox,,,종료,1
